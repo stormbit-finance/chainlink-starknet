@@ -1,6 +1,6 @@
 use starknet::{
-    ContractAddress, contract_address_const, testing::{set_caller_address, set_contract_address},
-    class_hash::{class_hash_const, Felt252TryIntoClassHash}, syscalls::deploy_syscall,
+    ContractAddress, testing::{set_caller_address, set_contract_address},
+    class_hash::Felt252TryIntoClassHash, syscalls::deploy_syscall,
 };
 
 use array::ArrayTrait;
@@ -8,7 +8,7 @@ use clone::Clone;
 use traits::{Into, TryInto};
 use option::OptionTrait;
 use core::{result::ResultTrait, panic_with_felt252};
-
+use chainlink::utils::{contract_address_const, class_hash_const};
 use chainlink::ocr2::aggregator::{
     pow, Aggregator,
     Aggregator::{BillingConfig, PayeeConfig, AggregatorImpl, BillingImpl, PayeeManagementImpl},
@@ -161,7 +161,7 @@ fn test_upgrade_non_owner() {
     let _ = setup();
     let mut state = STATE();
 
-    OwnerUpgradeableImpl::upgrade(ref state, class_hash_const::<123>());
+    OwnerUpgradeableImpl::upgrade(ref state, 123.try_into().unwrap());
 }
 
 // --- Billing tests ---

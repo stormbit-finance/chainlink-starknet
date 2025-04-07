@@ -1,4 +1,4 @@
-use starknet::{contract_address_const, EthAddress};
+use starknet::{EthAddress, ContractAddress};
 use chainlink::libraries::mocks::mock_multisig_target::{
     IMockMultisigTarget, IMockMultisigTargetDispatcherTrait, IMockMultisigTargetDispatcher,
 };
@@ -13,6 +13,7 @@ use snforge_std::{
     cheatcodes::{events::{EventSpy}}, start_cheat_block_timestamp_global,
 };
 use chainlink::tests::test_mcms::utils::{setup_mcms_deploy_set_config_and_set_root};
+use chainlink::utils::contract_address_const;
 
 
 #[test]

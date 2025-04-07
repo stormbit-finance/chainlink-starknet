@@ -4,6 +4,7 @@ use integer::U128sFromFelt252Result;
 use core::integer::u128_byte_reverse;
 use core::keccak::compute_keccak_byte_array;
 use alexandria_bytes::{Bytes, BytesTrait};
+use starknet::{ContractAddress, ClassHash,Felt252TryIntoClassHash};
 
 fn split_felt(felt: felt252) -> (u128, u128) {
     match u128s_from_felt252(felt) {
@@ -23,4 +24,12 @@ pub fn u256_reverse_endian(input: u256) -> u256 {
 // returns little-endian while evm implementations use big-endian
 pub fn keccak(input: @ByteArray) -> u256 {
     u256_reverse_endian(compute_keccak_byte_array(input))
+}
+
+pub fn contract_address_const<const address: felt252>() -> ContractAddress {
+    address.try_into().unwrap()
+}
+
+pub fn class_hash_const<const address: felt252>() -> ClassHash {
+    address.try_into().unwrap()
 }

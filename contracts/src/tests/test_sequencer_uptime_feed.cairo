@@ -1,7 +1,5 @@
 use starknet::ContractAddress;
 use starknet::EthAddress;
-use starknet::contract_address_const;
-use starknet::class_hash::class_hash_const;
 use starknet::class_hash::Felt252TryIntoClassHash;
 use starknet::syscalls::deploy_syscall;
 use starknet::testing::set_caller_address;
@@ -24,7 +22,7 @@ use chainlink::ocr2::aggregator_proxy::AggregatorProxy;
 use chainlink::ocr2::aggregator_proxy::AggregatorProxy::AggregatorProxyImpl;
 use chainlink::tests::test_ownable::should_implement_ownable;
 use chainlink::tests::test_access_controller::should_implement_access_control;
-
+use chainlink::utils::{contract_address_const, class_hash_const};
 use chainlink::emergency::sequencer_uptime_feed::{
     ISequencerUptimeFeed, ISequencerUptimeFeedDispatcher, ISequencerUptimeFeedDispatcherTrait,
 };
@@ -33,7 +31,6 @@ use snforge_std::{
     declare, ContractClassTrait, start_cheat_caller_address_global,
     stop_cheat_caller_address_global, DeclareResultTrait,
 };
-
 
 fn PROXY() -> AggregatorProxy::ContractState {
     AggregatorProxy::contract_state_for_testing()

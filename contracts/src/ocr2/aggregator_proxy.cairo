@@ -211,7 +211,7 @@ mod AggregatorProxy {
 
             let proposed_aggregator = self._proposed_aggregator.read();
             assert(address == proposed_aggregator, 'does not match proposed address');
-            self._proposed_aggregator.write(starknet::contract_address_const::<0>());
+            self._proposed_aggregator.write(0.try_into().unwrap());
             self._set_aggregator(proposed_aggregator);
 
             AggregatorConfirmed(previous, address);

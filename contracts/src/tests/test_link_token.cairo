@@ -1,6 +1,6 @@
 use starknet::{
-    syscalls::deploy_syscall, ContractAddress, testing::set_caller_address, contract_address_const,
-    class_hash::{class_hash_const, Felt252TryIntoClassHash},
+    syscalls::deploy_syscall, ContractAddress, testing::set_caller_address,
+    class_hash::Felt252TryIntoClassHash,
 };
 
 use array::ArrayTrait;
@@ -13,7 +13,7 @@ use chainlink::token::v2::link_token::{LinkToken, LinkToken::{MintableToken, Min
 use chainlink::libraries::upgrades::v2::owner_upgradeable::OwnerUpgradeableComponent::OwnerUpgradeableImpl;
 use openzeppelin::token::erc20::ERC20Component::{ERC20Impl, ERC20MetadataImpl};
 use chainlink::tests::test_ownable::should_implement_ownable;
-
+use chainlink::utils::{contract_address_const, class_hash_const};
 use snforge_std::{
     declare, ContractClassTrait, start_cheat_caller_address_global,
     stop_cheat_caller_address_global, DeclareResultTrait,

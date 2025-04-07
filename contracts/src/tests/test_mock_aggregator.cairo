@@ -1,8 +1,8 @@
 use starknet::ContractAddress;
 use starknet::testing::set_caller_address;
 use chainlink::ocr2::mocks::mock_aggregator::MockAggregator;
-use starknet::contract_address_const;
 use chainlink::ocr2::aggregator::Round;
+use chainlink::utils::contract_address_const;
 
 use snforge_std::{
     declare, ContractClassTrait, start_cheat_caller_address_global,

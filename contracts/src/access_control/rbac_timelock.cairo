@@ -60,7 +60,7 @@ trait IRBACTimelock<TContractState> {
 #[starknet::contract]
 mod RBACTimelock {
     use core::traits::TryInto;
-    use core::starknet::SyscallResultTrait;
+    use starknet::SyscallResultTrait;
     use starknet::{
         ContractAddress, call_contract_syscall, StorageAddress,
         storage::{

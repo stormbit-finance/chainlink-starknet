@@ -4,7 +4,7 @@ use alexandria_encoding::sol_abi::encode::SolAbiEncodeTrait;
 use core::array::{SpanTrait, ArrayTrait};
 use starknet::{
     eth_signature::is_eth_signature_valid, ContractAddress, EthAddress, EthAddressIntoFelt252,
-    EthAddressZeroable, contract_address_const, eth_signature::public_key_point_to_eth_address,
+    EthAddressZeroable, eth_signature::public_key_point_to_eth_address,
     secp256_trait::{
         Secp256Trait, Secp256PointTrait, recover_public_key, is_signature_entry_valid, Signature,
         signature_from_vrs,
@@ -24,7 +24,7 @@ use chainlink::tests::test_mcms::utils::{
     setup_mcms_deploy_set_config_and_set_root, set_root_args, set_root_args_override_root,
     merkle_root,
 };
-use chainlink::utils::{keccak};
+use chainlink::utils::{keccak, contract_address_const};
 use snforge_std::{
     declare, ContractClassTrait, start_cheat_caller_address_global, start_cheat_caller_address,
     stop_cheat_caller_address, stop_cheat_caller_address_global, start_cheat_chain_id_global,

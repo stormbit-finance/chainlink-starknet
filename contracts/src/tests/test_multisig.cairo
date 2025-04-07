@@ -1,7 +1,5 @@
 use chainlink::multisig::IMultisigDispatcherTrait;
 use core::traits::Into;
-use starknet::class_hash_const;
-use starknet::contract_address_const;
 use starknet::syscalls::deploy_syscall;
 use starknet::testing::set_caller_address;
 use starknet::testing::set_contract_address;
@@ -16,6 +14,7 @@ use chainlink::multisig::assert_unique_values;
 use chainlink::multisig::Multisig;
 use chainlink::multisig::Multisig::{MultisigImpl, UpgradeableImpl};
 use chainlink::multisig::{IMultisigDispatcher};
+use chainlink::utils::{contract_address_const, class_hash_const};
 
 use snforge_std::{
     declare, ContractClassTrait, start_cheat_caller_address_global,

@@ -18,7 +18,7 @@ trait IMinter<TContractState> {
 
 #[starknet::contract]
 mod LinkToken {
-    use starknet::{contract_address_const, ContractAddress, class_hash::ClassHash};
+    use starknet::{ContractAddress, class_hash::ClassHash};
     use zeroable::Zeroable;
     use openzeppelin::{
         token::erc20::{
@@ -32,6 +32,7 @@ mod LinkToken {
         upgrades::v1::upgradeable::{Upgradeable, IUpgradeable},
         upgrades::v2::owner_upgradeable::OwnerUpgradeableComponent,
     };
+    use chainlink::utils::contract_address_const;
 
     component!(path: OwnableComponent, storage: ownable, event: OwnableEvent);
     component!(path: ERC20Component, storage: erc20, event: ERC20Event);

@@ -1,6 +1,6 @@
 use starknet::{
-    ContractAddress, testing::{set_caller_address, set_contract_address}, contract_address_const,
-    class_hash::{class_hash_const, Felt252TryIntoClassHash}, syscalls::deploy_syscall,
+    ContractAddress, testing::{set_caller_address, set_contract_address},
+    class_hash::Felt252TryIntoClassHash, syscalls::deploy_syscall,
 };
 
 use array::ArrayTrait;
@@ -13,6 +13,7 @@ use chainlink::libraries::upgrades::v2::owner_upgradeable::OwnerUpgradeableCompo
 use chainlink::libraries::access_control::{
     IAccessController, IAccessControllerDispatcher, IAccessControllerDispatcherTrait,
 };
+use chainlink::utils::{contract_address_const, class_hash_const};
 
 use snforge_std::{
     declare, ContractClassTrait, start_cheat_caller_address_global,

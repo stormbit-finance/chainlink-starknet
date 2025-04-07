@@ -1,7 +1,7 @@
 use core::array::{SpanTrait, ArrayTrait};
 use starknet::{
     ContractAddress, EthAddress, Felt252TryIntoEthAddress, EthAddressIntoFelt252,
-    EthAddressZeroable, contract_address_const,
+    EthAddressZeroable,
 };
 use chainlink::mcms::{
     ExpiringRootAndOpCount, RootMetadata, Config, Signer, ManyChainMultiSig,
@@ -21,6 +21,7 @@ use snforge_std::{
 use chainlink::tests::test_mcms::utils::{
     setup_mcms_deploy, setup_mcms_deploy_and_set_config_2_of_2, ZERO_ARRAY, fill_array,
 };
+use chainlink::utils::contract_address_const;
 
 #[test]
 #[feature("safe_dispatcher")]

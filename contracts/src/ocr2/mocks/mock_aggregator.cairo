@@ -12,7 +12,6 @@ trait IMockAggregator<TContractState> {
 #[starknet::contract]
 mod MockAggregator {
     use array::ArrayTrait;
-    use starknet::contract_address_const;
     use starknet::storage::Map;
     use traits::Into;
 
@@ -70,7 +69,7 @@ mod MockAggregator {
                         NewTransmission {
                             round_id: new_round_id,
                             answer: answer,
-                            transmitter: contract_address_const::<42>(),
+                            transmitter: 42.try_into().unwrap(),
                             observation_timestamp: observation_timestamp,
                             observers: 3,
                             observations: observations,

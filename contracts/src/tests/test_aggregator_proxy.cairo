@@ -1,9 +1,7 @@
-use starknet::contract_address_const;
 use starknet::ContractAddress;
 use starknet::testing::set_caller_address;
 use starknet::syscalls::deploy_syscall;
 use starknet::class_hash::Felt252TryIntoClassHash;
-use starknet::class_hash::class_hash_const;
 
 use array::ArrayTrait;
 use traits::Into;
@@ -24,7 +22,7 @@ use chainlink::libraries::access_control::{
 };
 use chainlink::libraries::upgrades::v2::owner_upgradeable::OwnerUpgradeableComponent::OwnerUpgradeableImpl;
 use chainlink::ocr2::aggregator::Round;
-use chainlink::utils::split_felt;
+use chainlink::utils::{split_felt, contract_address_const, class_hash_const};
 use chainlink::tests::test_ownable::should_implement_ownable;
 use chainlink::tests::test_access_controller::should_implement_access_control;
 

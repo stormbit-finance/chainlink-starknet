@@ -181,7 +181,7 @@ mod Aggregator {
     use option::OptionTrait;
 
     use starknet::{
-        ContractAddress, get_caller_address, contract_address_const, StorageBaseAddress,
+        ContractAddress, get_caller_address, StorageBaseAddress,
         SyscallResult, storage_read_syscall, storage_write_syscall,
         storage_address_from_base_and_offset, class_hash::ClassHash, storage::Map,
     };

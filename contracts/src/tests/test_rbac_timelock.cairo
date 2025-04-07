@@ -1,4 +1,4 @@
-use starknet::{ContractAddress, contract_address_const};
+use starknet::ContractAddress;
 use chainlink::{
     access_control::rbac_timelock::{
         RBACTimelock, IRBACTimelock, IRBACTimelockDispatcher, IRBACTimelockDispatcherTrait,
@@ -22,6 +22,7 @@ use openzeppelin::{
     token::{erc1155::interface::{IERC1155_RECEIVER_ID}, erc721::interface::{IERC721_RECEIVER_ID}},
 };
 use chainlink::tests::test_enumerable_set::{expect_out_of_bounds, expect_set_is_1_indexed};
+use chainlink::utils::contract_address_const;
 use snforge_std::{
     declare, ContractClassTrait, spy_events, EventSpyAssertionsTrait,
     start_cheat_caller_address_global, start_cheat_block_timestamp_global, DeclareResultTrait,

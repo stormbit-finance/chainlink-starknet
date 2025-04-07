@@ -180,7 +180,7 @@ fn eip_191_message_hash(msg: u256) -> u256 {
 #[starknet::contract]
 mod ManyChainMultiSig {
     use core::array::ArrayTrait;
-    use core::starknet::SyscallResultTrait;
+    use starknet::SyscallResultTrait;
     use core::array::SpanTrait;
     use core::dict::Felt252Dict;
     use core::traits::PanicDestruct;

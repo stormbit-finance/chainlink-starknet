@@ -1,8 +1,8 @@
-use starknet::contract_address_const;
 use starknet::ContractAddress;
 use starknet::testing::set_caller_address;
 use starknet::testing::set_contract_address;
 use zeroable::Zeroable;
+use chainlink::utils::contract_address_const;
 
 use openzeppelin::access::ownable::interface::{
     IOwnableTwoStep, IOwnableTwoStepDispatcher, IOwnableTwoStepDispatcherTrait,

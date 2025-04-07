@@ -1,5 +1,4 @@
 use starknet::ContractAddress;
-use starknet::contract_address_const;
 use starknet::testing::set_caller_address;
 use starknet::syscalls::deploy_syscall;
 use starknet::class_hash::Felt252TryIntoClassHash;
@@ -15,6 +14,7 @@ use chainlink::token::mock::valid_erc667_receiver::ValidReceiver;
 use chainlink::token::mock::invalid_erc667_receiver::InvalidReceiver;
 use chainlink::libraries::token::v2::erc677::ERC677Component;
 use chainlink::libraries::token::v2::erc677::ERC677Component::ERC677Impl;
+use chainlink::utils::contract_address_const;
 
 use snforge_std::{
     declare, ContractClassTrait, start_cheat_caller_address_global,
